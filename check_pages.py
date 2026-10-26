@@ -19,7 +19,7 @@ assert len(pages)==4
 for path in pages:
     text=path.read_text(encoding='utf-8'); page=Page();page.feed(text)
     assert 'lang="sk"' in text
-    assert not re.search('[А-Яа-яЁё]',text.replace('матьо це ккт',''))
+    assert not re.search('[А-Яа-яЁё]',text)
     assert len(page.ids)==len(set(page.ids)),path
     assert page.headings==1,(path,page.headings)
     assert page.active==1,path
@@ -33,7 +33,7 @@ for path in pages:
             assert parts.fragment in dest.ids,(path,link)
     print(path.name+': navigation, assets, anchors, language and headings OK')
 home=(root/'index.html').read_text(encoding='utf-8')
-for phrase in ('mato nefazuj sa','keby som vzduch tak tam neprejdem','nema preco to nefunhovat'):
+for phrase in ('mato nefazuj sa','keby som vzduch tak tam neprejdem','nema preco to nefungovat'):
     assert phrase in home
 for path in pages:
     text=path.read_text(encoding='utf-8')
