@@ -16,6 +16,6 @@ document.querySelectorAll('.marquee-toggle').forEach(button => {
     const paused = button.closest('.marquee').classList.toggle('is-paused');
     button.setAttribute('aria-pressed', String(paused));
     button.setAttribute('aria-label', paused ? 'Spustiť pohyb' : 'Pozastaviť pohyb');
-    button.textContent = paused ? '▶' : 'Ⅱ';
+    // Icons are drawn in CSS to avoid colored emoji rendering.
   });
 });
