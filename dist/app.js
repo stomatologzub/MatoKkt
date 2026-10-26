@@ -11,3 +11,11 @@ form?.addEventListener('submit', event => {
   setTimeout(() => URL.revokeObjectURL(url), 1000);
   document.querySelector('#form-status').textContent = 'Zadanie je pripravené na stiahnutie. Maťovi zatiaľ nebolo odoslané.';
 });
+document.querySelectorAll('.marquee-toggle').forEach(button => {
+  button.addEventListener('click', () => {
+    const paused = button.closest('.marquee').classList.toggle('is-paused');
+    button.setAttribute('aria-pressed', String(paused));
+    button.setAttribute('aria-label', paused ? 'Spustiť pohyb' : 'Pozastaviť pohyb');
+    button.textContent = paused ? '▶' : 'Ⅱ';
+  });
+});
