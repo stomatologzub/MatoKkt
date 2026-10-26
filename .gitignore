@@ -1,0 +1,11 @@
+.openai/
+.env
+.env.*
+!.env.example
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+*.zip
+# Previous unused illustration retained locally.
+dist/assets/hero.png
