@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: mato-kkt
+    runtime: static
+    repo: https://github.com/stomatologzub/MatoKkt
+    branch: main
+    buildCommand: "true"
+    staticPublishPath: ./dist
+    autoDeployTrigger: commit
