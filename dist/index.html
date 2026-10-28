@@ -1,5 +1,6 @@
 <!doctype html><html lang="sk">
 <head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#040607"><meta name="description" content="Maťo — technik festivalov. Technická podpora, príprava pódia a pomoc produkcii."><title>Technik festivalov · Maťo / Gukap</title><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="responsive.css"><link rel="stylesheet" href="studio.css">
+<link rel="stylesheet" href="festival-game.css">
 </head>
 <body><a class="skip-link" href="#main">Preskočiť na obsah</a>
 <header><a class="logo" href="index.html">maťo<i class="brand-mark" aria-hidden="true"></i></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span>Menu</span><i aria-hidden="true"></i></button>
@@ -41,6 +42,17 @@
 <p>Príprava mikrofónových stojanov, prenášanie vybavenia a asistencia pri zvukových skúškach.</p>
 </article></div><a class="primary" href="catalog.html">Všetky služby <span>↗</span></a>
 </section>
+<section class="festival-game" id="festival-game" aria-labelledby="festival-game-title">
+<div class="game-section-heading"><div><div class="eyebrow">BACKSTAGE / INTERAKTÍVNA ZÓNA</div><h2 id="festival-game-title">ZACHRÁŇ<br><span>FESTIVAL.</span></h2></div><p>3 úlohy. 30 sekúnd. Jeden Maťo.<br>Čo sa môže pokaziť?</p></div>
+<div class="game-shell" data-phase="idle">
+<div class="game-topbar"><span class="game-system"><i aria-hidden="true"></i> CREW CONTROL / LIVE SIMULÁTOR</span><span class="game-record">OSOBNÝ REKORD: <strong data-record>0</strong></span></div>
+<div class="game-hud" hidden><div><span>ZOSTÁVA</span><strong data-time>30 <small>s</small></strong></div><div><span>SKÓRE</span><strong data-score>0</strong></div><div class="game-task-hud"><span>AKTUÁLNA ÚLOHA</span><strong data-task>KÁBLE</strong></div><button class="game-quit" type="button" data-action="exit">Ukončiť hru <span aria-hidden="true">↗</span></button></div>
+<ol class="game-steps" aria-label="Priebeh hry" hidden><li><span>01</span> KÁBLE</li><li><span>02</span> ZAPNI STAGE</li><li><span>03</span> NÁJDI MAŤA</li></ol>
+<div class="game-view"><div class="game-lobby"><div class="lobby-copy"><span class="game-tag">SYSTEM STATUS / ČAKÁME NA CREW</span><h3>Kapely sú tu.<br>Technika <em>ešte nie.</em></h3><p>Zapoj káble. Rozsvieť stage. Nájdi Maťa.<br>Máš 30 sekúnd, žiadne výhovorky a podozrivo málo spánku.</p><ul><li>+100 bodov za úlohu</li><li>−10 za chybu, nikdy pod nulu</li><li>+5 za každú zostávajúcu sekundu</li></ul><button class="primary game-start" type="button" data-action="start" disabled>SPUSTIŤ CHAOS <span aria-hidden="true">↗</span></button><p class="game-controls-note">Myš, dotyk aj klávesnica. Káble môžeš spojiť aj dvoma kliknutiami.</p><noscript><p>Na spustenie hry potrebuješ zapnutý JavaScript. Zvyšok webu funguje aj bez neho.</p></noscript></div><div class="lobby-stage" aria-hidden="true"><div class="stage-truss"></div><div class="lobby-lamps"><i></i><i></i><i></i></div><span class="stage-wordmark">NO SIGNAL<span>STAGE / 01</span></span><div class="lobby-speaker speaker-left"></div><div class="lobby-speaker speaker-right"></div><div class="lobby-case"></div><div class="lobby-floor"></div><span class="lobby-sticker">MAŤO<br>WAS HERE. ↗</span></div></div></div>
+<div class="game-bottom"><p class="game-radio" role="status" aria-live="polite" aria-atomic="true">Vysielačka: Stage stojí. Zatiaľ.</p><span class="game-progress" data-progress>0 / 3 HOTOVÉ</span></div>
+<p class="game-storage-note" data-storage-note hidden>Rekord zostane len v tejto relácii; prehliadač nepovolil lokálne uloženie.</p>
+</div>
+</section>
 <section class="quotes" aria-label="Maťove hlášky">
 <div class="eyebrow">BACKSTAGE MÁ VLASTNÝ SLOVNÍK</div>
 <div class="quote-grid">
@@ -68,5 +80,5 @@
 </section>
 </main>
 <footer><a class="logo" href="index.html">maťo<i class="brand-mark" aria-hidden="true"></i></a><span>maťo je kkt · stage je pripravený.</span><small>© 2026 Gukap · Maťo — technik festivalov</small>
-</footer><script src="app.js" defer></script>
+</footer><script src="app.js" defer></script><script src="festival-game.js" defer></script>
 </body></html>

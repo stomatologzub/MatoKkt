@@ -44,3 +44,22 @@ Ilustrácia: image_gen, podrobnosti v ASSET-NOTES.md. Písmo Manrope sa načíta
 Formulár stále iba pripravuje lokálny `.txt` súbor; nevytvára dojem odoslania na server. Kontrola v prehliadači má zahŕňať menu pri 320 px, jeho zatvorenie klávesom Escape, pás pri skrolovaní oboma smermi, znížený pohyb a skutočne stiahnutý súbor.
 
 Render používa existujúci `render.yaml`: statický obsah `dist`, bez build kroku. Zmenu publikovania ani externý deploy nie je potrebné konfigurovať.
+
+## ZACHRÁŇ FESTIVAL
+
+Hra na hlavnej stránke medzi službami a hláškami: káble, zapnutie reflektorov podľa zapamätaného poradia a hľadanie Maťa. Používa `festival-game.js`, `festival-game.css`, SVG/CSS grafiku a existujúci ilustrovaný portrét. Žiadne balíky ani server.
+
+- Celá hra má 30 sekúnd. Čas beží aj v skrytej karte; kontroluje sa aj pred každým herným vstupom.
+- Úloha: +100 bodov. Chyba: −10, najmenej 0. Víťazstvo: +5 za každú zobrazenú zostávajúcu sekundu.
+- Káble fungujú cez Pointer Events myšou aj dotykom alebo výberom kábla a rozhrania tlačidlami. Všetky úlohy možno ovládať klávesnicou.
+- Najlepší ukončený výsledok sa ukladá pod `mato-festival-record` v localStorage. Pri blokovanom úložisku hra pokračuje a rekord zostáva v pamäti relácie.
+- Päť pozdravov Maťovi na obrazovke výhry odomkne tajný achievement. Nová hra vždy zruší staré časovače, odložené sekvencie aj rozpracované ťahanie.
+- `prefers-reduced-motion` zachová hernú logiku a vypne dekoratívne animácie. Bez JavaScriptu sa hra nespustí; ostatný obsah zostáva dostupný.
+
+Integračný test používa iba Python a už nainštalovaný Chrome. Spustite HTTP server na porte 8018 a **samostatný testovací profil** Chrome s `--headless=new --remote-debugging-port=9338 --user-data-dir=<test-profile>`. Potom:
+
+```text
+python check_game_browser.py --url http://127.0.0.1:8018 --port 9338
+```
+
+Test kontroluje skutočný mouse/touch drag, klávesnicu, chyby a skóre, všetky úlohy, výhru, prehru, zrušenie a reštart, bonus, rekord a jeho perzistenciu, achievement, 320–1920 px, znížený pohyb, blokovaný localStorage a pôvodný formulár. Deadline testuje posunom hodín v izolovanom prehliadači, bez testovacích prepínačov v produkčnom kóde. Test vymaže iba herný rekord daného testovacieho profilu.
