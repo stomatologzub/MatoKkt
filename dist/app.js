@@ -42,7 +42,7 @@ if (form) {
       document.body.append(link);
       link.click();
       form.dataset.state = 'ready';
-      submit.textContent = 'Stiahnuť zadanie znova ↓';
+      submit.innerHTML = 'Stiahnuť zadanie znova <i class="ui-arrow arrow-down" aria-hidden="true"></i>';
       status.textContent = 'Súbor je pripravený a sťahovanie bolo spustené. Maťovi zatiaľ nič nebolo odoslané.';
     } catch {
       status.textContent = 'Súbor sa nepodarilo pripraviť. Údaje zostali vo formulári; skús to znova.';
@@ -124,7 +124,7 @@ document.querySelectorAll('.quote-grid blockquote').forEach(quote => {
   const button = document.createElement('button');
   button.className = 'quote-secret';
   button.type = 'button';
-  button.textContent = 'Poznámka produkcie ↗';
+  button.innerHTML = 'Poznámka produkcie <i class="ui-arrow" aria-hidden="true"></i>';
   button.setAttribute('aria-expanded', 'false');
   const note = document.createElement('span');
   note.className = 'secret-note';
