@@ -37,7 +37,7 @@ for phrase in ('mato nefazuj sa','keby som vzduch tak tam neprejdem','nema preco
     assert phrase in home
 for path in pages:
     text=path.read_text(encoding='utf-8')
-    assert 'Maťo' in text and 'mato je kokot' in text
+    assert 'Maťo' in text and 'maťo je kkt' in text
     assert 'Akira' not in text and 'Obľúbené' not in text
 contact=(root/'favorites.html').read_text(encoding='utf-8')
 assert 'id="booking"' in contact and 'nič sa automaticky neodosiela' in contact
